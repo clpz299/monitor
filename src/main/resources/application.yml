@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /monitor
+  port: 8088
+
+web:
+  properity:
+    file-path: /home/chan/temp/

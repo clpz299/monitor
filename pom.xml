@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.plume.monitor</groupId>
+	<artifactId>monitor</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+	<name>monitor</name>
+	<description>Monitor project for Spring Boot</description>
+	
+
+
+	<properties>
+		<java.version>1.8</java.version>
+		<springfox.swagger2.version>2.8.0</springfox.swagger2.version>
+	</properties>
+
+
+	<repositories>
+		<repository>
+			<id>maven-ali</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencies>
+	 	<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.swagger2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.swagger2.version}</version>
+		</dependency>
+		<!-- 视频压缩 -->
+		<dependency>
+			<groupId>java</groupId>
+			<artifactId>jave</artifactId>
+			<version>1.0.2</version>
+			<scope>system</scope>
+			<systemPath>/home/chan/video_jars/jave-1.0.2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>ws.schild</groupId>
+			<artifactId>jave-core</artifactId>
+			<version>2.4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>ws.schild</groupId>
+			<artifactId>jave-native-linux64</artifactId>
+			<version>2.4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>ws.schild</groupId>
+			<artifactId>jave-all-deps</artifactId>
+			<version>2.4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>jna</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>/home/chan/video_jars/jna.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>examples</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>/home/chan/video_jars/examples.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+	 	<finalName>monitor</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-maven-plugin</artifactId>
+			    <configuration>
+			    	<includeSystemScope>true</includeSystemScope>
+			    </configuration>
+			    <executions>
+			     <execution>
+			      <goals>
+			       <goal>repackage</goal>
+			      </goals>
+			     </execution>
+			    </executions>
+		   </plugin>
+		</plugins>
+	</build>
+</project>
