@@ -22,12 +22,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2Config extends WebMvcConfigurationSupport {
-	@Bean
-	public Docket controllerApi() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(new ApiInfoBuilder().title("摄像设备监控接口文档").description("简要概述")
-						.contact(new Contact("作者", "", "邮箱")).version("版本号: 1.0").build())
-				.select().apis(RequestHandlerSelectors.basePackage("com.plume.monitor.web"))
-				.paths(PathSelectors.any()).build();
-	}
+    @Bean
+    public Docket controllerApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(new ApiInfoBuilder().title("摄像设备监控接口文档").description("简要概述")
+                        .contact(new Contact("作者", "", "邮箱")).version("版本号: 1.0").build())
+                .select().apis(RequestHandlerSelectors.basePackage("com.plume.monitor.web"))
+                .paths(PathSelectors.any()).build();
+    }
 }
