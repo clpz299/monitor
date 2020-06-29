@@ -82,7 +82,7 @@
 			<artifactId>jave</artifactId>
 			<version>1.0.2</version>
 			<scope>system</scope>
-			<systemPath>/home/chan/video_jars/jave-1.0.2.jar</systemPath>
+			<systemPath>${basedir}/lib/video_jars/jave-1.0.2.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>ws.schild</groupId>
@@ -104,7 +104,7 @@
 			<artifactId>jna</artifactId>
 			<version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>/home/chan/video_jars/jna.jar</systemPath>
+			<systemPath>${basedir}/lib/video_jars/jna.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -112,7 +112,7 @@
 			<artifactId>examples</artifactId>
 			<version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>/home/chan/video_jars/examples.jar</systemPath>
+			<systemPath>${basedir}/lib/video_jars/examples.jar</systemPath>
 		</dependency>
 	</dependencies>
 
